@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const dateFormat = (timestamp) => {
   const day = new Date(timestamp)
@@ -20,65 +20,66 @@ const applicationSchema = new Schema(
       default: Date.now,
       get: timestamp => dateFormat(timestamp)
     },
-    name: {
+    submittedDate: {
+      type: String
+    },
+    firstName: {
       type: String,
       required: true
+    },
+    middleName: {
+      type: String
+    },
+    lastName: {
+      type: String,
+      required: true
+    },
+    age: {
+      type: String
     },
     birthday: {
-      type: String,
-      required: true
-    },
-    phoneNumber: {
-      type: String,
-      required: true,
-      match: [/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/, 'Must be a valid phone number!']
-    },
-    addressStreet: {
-      type: String,
-      required: true
-    },
-    addressCity: {
-      type: String,
-      required: true
-    },
-    state: {
-      type: String,
-      required: true
-    },
-    zipCode: {
-      type: Number,
-      required: true
-    },
-    guardianName: {
-      type: String,
-      required: true,
-      trim: true
-    },
-    guardianPhone: {
-      type: String,
-      required: true,
-      match: [/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/, 'Must be a valid phone number!']
+      type: String
     },
     grade: {
-      type: String,
-      required: true
+      type: String
     },
     school: {
       type: String,
-      required: true,
       trim: true
     },
-    currentStatus: {
-      // 0 for pending, 1 for accepted, 2 for denied
-      type: Number,
-      required: true
-    }
+    mothersName: {
+      type: String,
+      trim: true
+    },
+    fathersName: {
+      type: String,
+      trim: true
+    },
+    brothersName: {
+      type: String,
+      trim: true
+    },
+    sistersName: {
+      type: String,
+      trim: true
+    },    
+    address: {
+      type: String
+    },
+    phoneNumber: {
+      type: String
+    },
+    guardianPhone: {
+      type: String
+    },
   },
   {
     toJSON: {
       getters: true
     }
   }
-)
+);
 
-export default applicationSchema;
+const Application = model('Application', applicationSchema);
+
+export default Application;

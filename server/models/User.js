@@ -1,8 +1,6 @@
 import { Schema, model } from "mongoose";
 import bcrypt from 'bcrypt';
 
-import applicationSchema from './Application'
-
 const userSchema = new Schema(
   {
     username: {
@@ -26,18 +24,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       trim: true
-    },
-    admin: {
-      // 0 if student, 1 if staff/admin
-      type: Boolean,
-      required: true
-    },
-    applications: [applicationSchema]
-  },
-  {
-    toJSON: {
-      virtuals: true,
-    },
+    }
   }
 )
 
