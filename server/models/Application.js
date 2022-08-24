@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+const { Schema, model } = require('mongoose');
 
 const dateFormat = (timestamp) => {
   const day = new Date(timestamp)
@@ -25,14 +25,17 @@ const applicationSchema = new Schema(
     },
     firstName: {
       type: String,
-      required: true
+      required: true,
+      trim: true
     },
     middleName: {
-      type: String
+      type: String,
+      trim: true
     },
     lastName: {
       type: String,
-      required: true
+      required: true,
+      trim: true
     },
     age: {
       type: String
@@ -82,4 +85,4 @@ const applicationSchema = new Schema(
 
 const Application = model('Application', applicationSchema);
 
-export default Application;
+module.exports = Application;

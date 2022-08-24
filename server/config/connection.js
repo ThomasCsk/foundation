@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/scholar-foundation', {
   useNewUrlParser: true,
@@ -7,4 +7,4 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/scholar-foundat
   useFindAndModify: false
 });
 
-export default mongoose.connection;
+module.exports = mongoose.connection;
