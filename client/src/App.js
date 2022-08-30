@@ -8,7 +8,8 @@ import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
-import LogInSignUp from './pages/LoginSignUp'
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 
 const httpLink = createHttpLink({
@@ -47,8 +48,12 @@ function App() {
                 element={<Dashboard/>}
               />
               <Route
-                path="/loginsignup"
-                element={<LogInSignUp/>}
+                path="/login"
+                element={<Login/>}
+              />
+              <Route
+                path="/signup"
+                element={<Signup/>}
               />
             </Routes>
           </div>
