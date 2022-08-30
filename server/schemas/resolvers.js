@@ -16,10 +16,9 @@ const resolvers = {
       const userData = await User.find().select('-__v -password -secret');
       return userData;
     },
-    applications: async (parent, {firstName, lastName}, context) => {
+    applications: async (parent, args, context) => {
       if(context.user){
-        const params = [firstName?{firstName}:{}, lastName?{lastName}:{}]
-        const applicationData = await Application.find(params);
+        const applicationData = await Application.find();
         return applicationData;
       };
       throw new AuthenticationError('Not logged in');
@@ -56,34 +55,33 @@ const resolvers = {
 
         return { token, user };
       }
+      console.log(args.secret);
+      console.log(process.env.SECRET_NEW_USER);
       throw new AuthenticationError('Incorrect secret');
     },
     addApplication: async (parent, args, context) => {
-      if(context.user){
-        const applicationData = await Application.find(args.firstName, args.lastName);
-        if(applicationData){
-          throw new Error("You may have already added this student")
-        }
+      if(context.user){       
         const application = await Application.create(args);
         return application;
       }
       throw new AuthenticationError('Not logged in')
     },
-    // editApplication: async (parent, args, context) => {
-    //   if(context.user){
-
-    //   }
-    //   throw new AuthenticationError('Not logged in')
-    // },
-    deleteUser: async (parent, args, context) => {
+    editApplication: async (parent, args, context) => {
       if(context.user){
-        const deletedUser = await User.findOneAndDelete(_id)
+        const applicationData = await Application.findOneAndUpdate({ _id: args._id }, args, {new: true});
+        return applicationData;
+      }
+      throw new AuthenticationError('Not logged in')
+    },
+    deleteUser: async (parent, {_id}, context) => {
+      if(context.user){
+        const deletedUser = await User.findOneAndDelete({_id})
       }
       throw new AuthenticationError('Not logged in')
     },
     deleteApplication: async (parent, {_id}, context) => {
       if(context.user){
-        const deletedApp = await Application.findOneAndDelete(_id);
+        const deletedApp = await Application.findOneAndDelete({_id});
         return deletedApp;
       }
       throw new AuthenticationError('Not logged in')

@@ -13,12 +13,10 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(firstName: String!, lastName: String!, username: String!, email: String!, password: String!, secret: String! ): Auth
     addApplication(
-      _id: ID
-      createdAt: String
       submittedDate: String
-      firstName: String
+      firstName: String!
       middleName: String
-      lastName: String
+      lastName: String!
       age: String
       birthday: String
       grade: String
@@ -32,7 +30,7 @@ const typeDefs = gql`
       guardianPhone: String
     ): Application
     editApplication(
-      _id: ID
+      _id: ID!
       createdAt: String
       submittedDate: String
       firstName: String

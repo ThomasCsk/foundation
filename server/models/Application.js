@@ -7,7 +7,7 @@ const dateFormat = (timestamp) => {
           day.getDate() + 
           '/' + 
           day.getFullYear() +
-          'at' +
+          ' at ' +
           day.getHours() + 
           ':' + 
           day.getMinutes();
