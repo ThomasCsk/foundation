@@ -49,3 +49,15 @@ export const QUERY_APPLICATION = gql`
   }
 `;
 
+export const QUERY_USERS = gql`
+  query SearchUsers {
+    users {
+      _id
+      firstName
+      lastName
+      username
+      email
+    }
+  }
+`
+
