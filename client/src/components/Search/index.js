@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import EditModal from "../../EditModal";
+import EditModal from "../EditModal";
 import { useQuery } from '@apollo/client';
 import { QUERY_APPLICATIONS } from "../../utils/queries";
 
@@ -87,9 +87,9 @@ const Search = () => {
         <div id="search-container">
           {applications.length? // conditional to check if there are any applications found when the search button is pressed
           (
-          applications.map(app => { // loops through the applications found and displays them
+          applications.map((app,i) => { // loops through the applications found and displays them
             return(
-            <div key={app.id}>
+            <div key={app.id} onClick={() => toggleModal(app,i)}>
               <div>Submitted: {app.submittedDate}</div>
               <div>First Name: {app.firstName}</div>
               <div>Last Name: {app.lastName}</div>
