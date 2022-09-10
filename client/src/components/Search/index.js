@@ -72,31 +72,41 @@ const Search = () => {
 
   return (
     <div>
-      <h3>Search Applications</h3>
+      <h3 className="subtitle">Search Applications</h3>
       {isModalOpen && (
         <EditModal currentApp={currentApp} onClose={toggleModal} /> // edit modal
       )}
-      <form onSubmit={handleSubmit}>
-        <label>First Name: </label>
-        <input name="firstName" defaultValue={nameForm.firstName} onChange={handleChange}></input>
-        
-        <label>Last Name: </label>
-        <input name="lastName" defaultValue={nameForm.lastName} onChange={handleChange}></input>
-        
-        <button type="submit">Search!</button>
-        <div id="search-container">
+      <form onSubmit={handleSubmit} className='search'>
+        {/* <div className="searchInput"> */}
+          <div className="searchInput">
+            <label>First Name: </label>
+            <input name="firstName" defaultValue={nameForm.firstName} onChange={handleChange} className='input'></input>
+          </div>
+
+          <div className="searchInput">
+            <label>Last Name: </label>
+            <input name="lastName" defaultValue={nameForm.lastName} onChange={handleChange} className='input'></input>
+          </div>
+        {/* </div> */}
+
+
+        <button type="submit" className="button">Search</button>
+        <div className="searchResultsBox">
           {applications.length? // conditional to check if there are any applications found when the search button is pressed
           (
           applications.map((app,i) => { // loops through the applications found and displays them
             return(
-            <div key={app.id} onClick={() => toggleModal(app,i)}>
-              <div>Submitted: {app.submittedDate}</div>
-              <div>First Name: {app.firstName}</div>
-              <div>Last Name: {app.lastName}</div>
-              <div>Age: {app.age}</div>
-              <div>Grade: {app.grade}</div>
-              <div>School: {app.school}</div>
-              <div>----------------------</div>
+            <div key={app.id} onClick={() => toggleModal(app,i)} className='searchResult'>
+              <div className="firstColumn">
+                <div>Submitted: {app.submittedDate}</div>
+                <div>First Name: {app.firstName}</div>
+                <div>Last Name: {app.lastName}</div>
+              </div>
+              <div className="secondColumn">
+                <div>Age: {app.age}</div>
+                <div>Grade: {app.grade}</div>
+                <div>School: {app.school}</div>
+              </div>
             </div>
           )})
           ):(

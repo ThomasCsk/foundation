@@ -14,25 +14,29 @@ const Header = () => {
   const user = data?.me || {}
   return(
     <header>
-      <Link to="/">
-        <h3>Home</h3>
-      </Link>
-      <Link to="/dashboard">
-        <h3>Dashboard</h3>
-      </Link>
+      <h1 className='linkFlex'>Tondo 69er's Foundation</h1>
+      <div className='linkFlex'>
+        <Link to="/"  className='link'>
+          <h3>Home</h3>
+        </Link>
+        <Link to="/dashboard"  className='link'>
+          <h3>Dashboard</h3>
+        </Link >
+      </div>
+
       {!loggedIn?(
-      <div>
-        <Link to="/login">
+      <div className='linkFlex'>
+        <Link to="/login"  className='link'>
           <h3>Log-In</h3>
         </Link>
-        <Link to="/signup">
+        <Link to="/signup"  className='link'>
           <h3>Sign-Up</h3>
         </Link>
       </div>
       ):(  
-      <div>
+      <div className='linkFlex'>
         {user?(<p>Welcome, {user.username}</p>):(<></>)}
-        <a href='/' onClick={logout}>Sign-Out</a>
+        <a href='/' onClick={logout} className='link'>Sign-Out</a>
       </div>
       
       )}

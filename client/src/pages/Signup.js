@@ -31,17 +31,18 @@ const Signup = () => {
   };
 
   return(
-    <div>
-      <h2>Sign-Up</h2>
-      <p>Already have an account? <a href='/login'>Log-In Here!</a></p>
-      <form onSubmit={handleFormSubmit}>
-      <input
+    <section className='signup'>
+      <h2 className='title'>Sign-Up</h2>
+      <p className='subtitle'>Already have an account?<a href='/login' className='link'> Log-In Here!</a></p>
+      <form onSubmit={handleFormSubmit} className='signupForm'>
+        <input
           placeholder='Your first name'
           name='firstName'
           type='firstName'
           id='firstName'
           value={formState.firstName}
           onChange={handleChange}
+          className='input'
         />
         <input
           placeholder='Your last name'
@@ -50,6 +51,7 @@ const Signup = () => {
           id='lastName'
           value={formState.lastName}
           onChange={handleChange}
+          className='input'
         />
         <input
           placeholder='Your username'
@@ -58,6 +60,7 @@ const Signup = () => {
           id='username'
           value={formState.username}
           onChange={handleChange}
+          className='input'
         />
         <input
           placeholder='Your email'
@@ -66,6 +69,7 @@ const Signup = () => {
           id='email'
           value={formState.email}
           onChange={handleChange}
+          className='input'
         />
         <input
           placeholder='Your password'
@@ -74,6 +78,7 @@ const Signup = () => {
           id='password'
           value={formState.password}
           onChange={handleChange}
+          className='input'
         />
         <input
           placeholder='SECRET'
@@ -82,13 +87,14 @@ const Signup = () => {
           id='secret'
           value={formState.secret}
           onChange={handleChange}
+          className='input'
         />
-        <button type='submit'>
+        <button type='submit' className='button'>
           Submit
         </button>
       </form>
       {error && <div>Sign-Up failed</div>}
-    </div>
+    </section>
   )
 };
 

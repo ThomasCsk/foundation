@@ -57,55 +57,84 @@ const ApplicationForm = () => {
   }
   return(
   <div>
-    <h3>Add Application</h3>
-    <form onSubmit={handleSubmit}>
-      <label>Submitted Date: </label>
-      <input name="submittedDate" defaultValue={formState.submittedDate} onChange={handleChange}/>
+    <h3 className="subtitle">Add Application</h3>
+    <form onSubmit={handleSubmit} className='application'>
+      <div className="applicationInput">
+        <label>Submitted Date: </label>
+        <input name="submittedDate" defaultValue={formState.submittedDate} onChange={handleChange} className='input'/>
+      </div>
+
+      <div className="applicationInput">
+        <label>First Name: </label>
+        <input name="firstName" defaultValue={formState.firstName} onChange={handleChange} className='input' required/>
+      </div>
+
+      <div className="applicationInput">
+        <label>Middle Name: </label>
+        <input name="middleName" defaultValue={formState.middleName} onChange={handleChange} className='input'/>
+      </div>
+
+      <div className="applicationInput">
+        <label>Last Name: </label>
+        <input name="lastName" defaultValue={formState.lastName} onChange={handleChange} className='input' required/>
+      </div>
       
-      <label>First Name: </label>
-      <input name="firstName" defaultValue={formState.firstName} onChange={handleChange} required/>
+      <div className="applicationInput">
+        <label>Age: </label>
+        <input name="age" defaultValue={formState.age} onChange={handleChange} className='input'/>
+      </div>
       
-      <label>Middle Name: </label>
-      <input name="middleName" defaultValue={formState.middleName} onChange={handleChange}/>
+      <div className="applicationInput">
+        <label>Birthday: </label>
+        <input name="birthday" defaultValue={formState.birthday} onChange={handleChange} className='input'/>
+      </div>
       
-      <label>Last Name: </label>
-      <input name="lastName" defaultValue={formState.lastName} onChange={handleChange}/>
+      <div className="applicationInput">
+        <label>Grade: </label>
+        <input name="grade" defaultValue={formState.grade} onChange={handleChange} className='input'/>
+      </div>
       
-      <label>Age: </label>
-      <input name="age" defaultValue={formState.age} onChange={handleChange}/>
+      <div className="applicationInput">
+        <label>School: </label>
+        <input name="school" defaultValue={formState.school} onChange={handleChange} className='input'/>
+      </div>
       
-      <label>Birthday: </label>
-      <input name="birthday" defaultValue={formState.birthday} onChange={handleChange}/>
+      <div className="applicationInput">
+        <label>Mother's Name: </label>
+        <input name="mothersName" defaultValue={formState.mothersName} onChange={handleChange} className='input'/>
+      </div>
       
-      <label>Grade: </label>
-      <input name="grade" defaultValue={formState.grade} onChange={handleChange}/>
+      <div className="applicationInput">
+        <label>Father's Name: </label>
+        <input name="fathersName" defaultValue={formState.fathersName} onChange={handleChange} className='input'/>
+      </div>
       
-      <label>School: </label>
-      <input name="school" defaultValue={formState.school} onChange={handleChange}/>
+      <div className="applicationInput">
+        <label>Brother's Name: </label>
+        <input name="brothersName" defaultValue={formState.brothersName} onChange={handleChange} className='input'/>
+      </div>
       
-      <label>Mother's Name: </label>
-      <input name="mothersName" defaultValue={formState.mothersName} onChange={handleChange}/>
+      <div className="applicationInput">
+        <label>Sister's Name: </label>
+        <input name="sistersName" defaultValue={formState.sistersName} onChange={handleChange} className='input'/>
+      </div>
       
-      <label>Father's Name: </label>
-      <input name="fathersName" defaultValue={formState.fathersName} onChange={handleChange}/>
+      <div className="applicationInput">
+        <label>Address: </label>
+        <input name="address" defaultValue={formState.address} onChange={handleChange} className='input'/>
+      </div>
       
-      <label>Brother's Name: </label>
-      <input name="brothersName" defaultValue={formState.brothersName} onChange={handleChange}/>
+      <div className="applicationInput">
+        <label>Phone Number: </label>
+        <input name="phoneNumber" defaultValue={formState.phoneNumber} onChange={handleChange} className='input'/>
+      </div>
       
-      <label>Sister's Name: </label>
-      <input name="sistersName" defaultValue={formState.sistersName} onChange={handleChange}/>
-      
-      <label>Address: </label>
-      <input name="address" defaultValue={formState.address} onChange={handleChange}/>
-      
-      <label>Phone Number: </label>
-      <input name="phoneNumber" defaultValue={formState.phoneNumber} onChange={handleChange}/>
-      
-      <label>Parent Phone Number: </label>
-      <input name="guardianPhone" defaultValue={formState.guardianPhone} onChange={handleChange}/>
-      
-      
-      <button type="submit">Submit</button>
+      <div className="applicationInput">
+        <label>Parent Phone Number: </label>
+        <input name="guardianPhone" defaultValue={formState.guardianPhone} onChange={handleChange} className='input'/>
+      </div>
+
+      <button type="submit" className='button'>Submit</button>
     </form>
   </div>
 )

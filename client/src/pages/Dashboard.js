@@ -8,15 +8,21 @@ const Dashboard = () => {
   const loggedIn = Auth.loggedIn();
   if(!loggedIn){
     return(
-      <h2>Please Login to view your dashboard!</h2>
+      <h2 className='title'>Please Login to view your dashboard!</h2>
     );
   }
   return(
     <section>
-      <h2>Dashboard</h2>
-      <div>
-        <ApplicationForm/>
-        <Search/>
+      <h2 className='title'>Dashboard</h2>
+      <div className='dashboard'>
+        <div className='dashboardSection'>
+          <ApplicationForm/>
+        </div>
+        <div className='dashboardSection'>
+          <Search/>
+        </div>
+        
+        
       </div>
     </section>
   )

@@ -31,10 +31,10 @@ const Login = () => {
   };
 
   return(
-    <section>
-      <h2>Log-In</h2>
-      <p>Need to make an account? <a href='/signup'>Sign-Up Here!</a></p>
-      <form onSubmit={handleFormSubmit}>
+    <section className='login'>
+      <h2 className='title'>Log-In</h2>
+      <p className='subtitle'>Need to make an account? <a href='/signup' className='link'> Sign-Up Here!</a></p>
+      <form onSubmit={handleFormSubmit} className='loginForm'>
         <input
           placeholder='Your email'
           name='email'
@@ -42,6 +42,7 @@ const Login = () => {
           id='email'
           value={formState.email}
           onChange={handleChange}
+          className='input'
         />
         <input
           placeholder='******'
@@ -50,8 +51,9 @@ const Login = () => {
           id='password'
           value={formState.password}
           onChange={handleChange}
+          className='input'
         />
-        <button type='submit'>
+        <button type='submit' className='button'>
           Submit
         </button>
       </form>

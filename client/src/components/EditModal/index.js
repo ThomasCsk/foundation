@@ -46,64 +46,67 @@ const EditModal = ({onClose, currentApp}) => {
 
   return(
     <div className='modalBackground'>
-      <div className='modalCard'>
+      <div className='modalCard' >
         <div>
+          <div className="pushButtonRight">
+            <button className='closeButton' onClick={onClose}>X</button>
+          </div>
+          
           <h3 className='modalTitle'>{editForm.firstName} {editForm.lastName}'s Application</h3>
-          <button onClick={onClose}>X</button>
         </div>
         <div className='modalContent'>
           <label>Created: </label>
-          <input name="createdAt" defaultValue={editForm.createdAt}></input>
+          <input name="createdAt" defaultValue={editForm.createdAt} className='input'/>
 
           <label>Submitted Date: </label>
-      <input name="submittedDate" defaultValue={editForm.submittedDate} onChange={handleChange}/>
-      
-      <label>First Name: </label>
-      <input name="firstName" defaultValue={editForm.firstName} onChange={handleChange} required/>
-      
-      <label>Middle Name: </label>
-      <input name="middleName" defaultValue={editForm.middleName} onChange={handleChange}/>
-      
-      <label>Last Name: </label>
-      <input name="lastName" defaultValue={editForm.lastName} onChange={handleChange}/>
-      
-      <label>Age: </label>
-      <input name="age" defaultValue={editForm.age} onChange={handleChange}/>
-      
-      <label>Birthday: </label>
-      <input name="birthday" defaultValue={editForm.birthday} onChange={handleChange}/>
-      
-      <label>Grade: </label>
-      <input name="grade" defaultValue={editForm.grade} onChange={handleChange}/>
-      
-      <label>School: </label>
-      <input name="school" defaultValue={editForm.school} onChange={handleChange}/>
-      
-      <label>Mother's Name: </label>
-      <input name="mothersName" defaultValue={editForm.mothersName} onChange={handleChange}/>
-      
-      <label>Father's Name: </label>
-      <input name="fathersName" defaultValue={editForm.fathersName} onChange={handleChange}/>
-      
-      <label>Brother's Name: </label>
-      <input name="brothersName" defaultValue={editForm.brothersName} onChange={handleChange}/>
-      
-      <label>Sister's Name: </label>
-      <input name="sistersName" defaultValue={editForm.sistersName} onChange={handleChange}/>
-      
-      <label>Address: </label>
-      <input name="address" defaultValue={editForm.address} onChange={handleChange}/>
-      
-      <label>Phone Number: </label>
-      <input name="phoneNumber" defaultValue={editForm.phoneNumber} onChange={handleChange}/>
-      
-      <label>Parent Phone Number: </label>
-      <input name="guardianPhone" defaultValue={editForm.guardianPhone} onChange={handleChange}/>
-        
+          <input name="submittedDate" defaultValue={editForm.submittedDate} onChange={handleChange} className='input'/>
+          
+          <label>First Name: </label>
+          <input name="firstName" defaultValue={editForm.firstName} onChange={handleChange}  className='input' required/>
+          
+          <label>Middle Name: </label>
+          <input name="middleName" defaultValue={editForm.middleName} onChange={handleChange} className='input'/>
+          
+          <label>Last Name: </label>
+          <input name="lastName" defaultValue={editForm.lastName} onChange={handleChange} className='input' required/>
+          
+          <label>Age: </label>
+          <input name="age" defaultValue={editForm.age} onChange={handleChange} className='input'/>
+          
+          <label>Birthday: </label>
+          <input name="birthday" defaultValue={editForm.birthday} onChange={handleChange} className='input'/>
+          
+          <label>Grade: </label>
+          <input name="grade" defaultValue={editForm.grade} onChange={handleChange} className='input'/>
+          
+          <label>School: </label>
+          <input name="school" defaultValue={editForm.school} onChange={handleChange} className='input'/>
+          
+          <label>Mother's Name: </label>
+          <input name="mothersName" defaultValue={editForm.mothersName} onChange={handleChange} className='input'/>
+          
+          <label>Father's Name: </label>
+          <input name="fathersName" defaultValue={editForm.fathersName} onChange={handleChange} className='input'/>
+          
+          <label>Brother's Name: </label>
+          <input name="brothersName" defaultValue={editForm.brothersName} onChange={handleChange} className='input'/>
+          
+          <label>Sister's Name: </label>
+          <input name="sistersName" defaultValue={editForm.sistersName} onChange={handleChange} className='input'/>
+          
+          <label>Address: </label>
+          <input name="address" defaultValue={editForm.address} onChange={handleChange} className='input'/>
+          
+          <label>Phone Number: </label>
+          <input name="phoneNumber" defaultValue={editForm.phoneNumber} onChange={handleChange} className='input'/>
+          
+          <label>Parent Phone Number: </label>
+          <input name="guardianPhone" defaultValue={editForm.guardianPhone} onChange={handleChange} className='input'/>
+            
         </div>    
         <div className='modalButtons'>
-          <button onClick={handleSubmit}>Save Changes</button>
-          <button onClick={onClose}>Close</button>
+          {/* <button onClick={handleSubmit} className='editButton'>Save Changes</button> */}
+          {/* <button onClick={onClose} className='closeButton'>Close</button> */}
         </div>
       </div>
     </div>

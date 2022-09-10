@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
   return(
-    <div>
-      © 2022
-    </div>
+    <footer>
+      Thomas Ciszek ©2022
+    </footer>
   )
 };
 
