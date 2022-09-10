@@ -1,4 +1,4 @@
-import User from './User';
-import Application from './Application';
+const User = require('./User');
+const Application = require('./Application');
 
-export default {User, Application};
+module.exports = {User, Application};

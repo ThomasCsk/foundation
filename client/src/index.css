@@ -1,13 +1,266 @@
+/* General CSS */
 body {
+  box-sizing: border-box;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-size: .9375rem;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--fourthColor);
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+:root {
+  --firstColor: #48f4b3;
+  --secondColor: #129bb6;
+  --thirdColor: #072A40;
+  --fourthColor: #cac7ba;
+}
+.title{
+  font-size: 3rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
+.subtitle{
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
+.button{
+  color: var(--firstColor);
+  background-color: var(--thirdColor);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+.button:hover{
+  background-color: #126396;
+}
+.link{
+  font-style: italic;
+  text-decoration: none;
+  color: var(--secondColor);
+}
+.link:hover{
+  font-weight: bolder;
+}
+.input{
+  border: solid 1px var(--thirdColor);
+  display:block;
+  padding: 7px 15px;
+  color: var(--thirdColor);
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .75);
+}
+.input:hover{
+  background-color: rgba(255, 255, 255, 1);
+  outline: none;
+}
+/* End General CSS */
+
+/* Homepage */
+.homepage p{
+  display: flex;
+  justify-content: center;
+}
+/* End Homepage */
+
+/* Header */
+body header{
+display: flex;
+align-items: center;
+justify-content: center;
+justify-content: space-between;
+}
+.linkFlex{
+  display: flex;
+  justify-content:space-evenly;
+  width:33.3%
+}
+header div a{
+  align-self: center;
+}
+/* End Header */
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+/* End Footer */
+
+/* Login */
+.login{
+  display: flex;
+  flex-direction: column;
+}
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+}
+/* End Login */
+
+/* Signup */
+.signup{
+  display: flex;
+  flex-direction: column;
+}
+.signupForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+}
+/* End Signup */
+
+/* Dashboard */
+.dashboard{
+  display: flex;
+  justify-content: space-evenly;
+}
+.dashboardSection{
+  width: 50%;
+}
+/* End Dashboard */
+
+/* Add Application */
+.application{
+  display: flex;
+  flex-direction: column;
+  width: 92.5%;
+  margin: auto;
+}
+
+.applicationInput{
+  display: flex;
+  justify-content: center;
+}
+
+.applicationInput label{
+  padding: 5px;
+  width: 30%;
+}
+
+.applicationInput input{
+  padding: 5px;
+  width: 100%;
+}
+/* End Add Application */
+
+/* Search */
+.search{
+  display: flex;
+  flex-direction: column;
+  width: 92.5%;
+  margin: auto;
+}
+.searchInput{
+  display: flex;
+  justify-content: center;
+}
+.searchInput label{
+  padding: 5px;
+  width: 30%;
+}
+.searchInput input{
+  padding: 5px;
+  width: 100%;
+}
+.search button{
+  width: 100%;
+  margin: auto;
+}
+.searchResultsBox{
+  border: 2px solid var(--thirdColor);
+}
+.searchResult{
+  display: flex;
+  padding: 1rem;
+  border: 1px solid var(--secondColor);
+}
+.firstColumn{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.secondColumn{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+/* End Search */
+
+/* Modal */
+.modalBackground {
+	background: rgba(0, 0, 0, .65);
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1;
+}
+.modalCard {
+	background: var(--thirdColor);
+	border-radius: 5px;
+	max-width: 100%;
+	margin: 2vw auto;
+	padding: 2vw;
+	width: 80%;
+}
+.modalTitle {
+  display: flex;
+  justify-content: center;
+	font-size: 3vw;
+	font-weight: 600;
+	margin-bottom: 25px;
+  color: var(--fourthColor);
+  padding-top: 10px;
+}
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  color: #F9F7F0;
+}
+.modalButtons {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1vw;
+}
+.editButton {
+  color: black;
+  background-color: #2ad493;
+}
+.closeButton {
+  color: black;
+  background-color: lightcoral;
+  padding: 12px;
+  border-radius: 30px;
+}
+.closeButton:hover{
+  background-color: red;
+}
+.editButton:hover{
+  background-color: green;
+}
+/* End Modal */
+
+/* Media Queries */
+
+/* End Media Queries */
