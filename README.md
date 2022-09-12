@@ -24,7 +24,7 @@ To install this project, you can download it as a zip file and use it that way. 
   
 ## Usage
   
-To use this project, you can navigate to the website here: . You will then have to create an account, and from there you will have access to the application search and add application sections. The website used here will be a different website with different security measure than the one given to the client.
+To use this project, you can navigate to the website here: [https://pacific-temple-86058.herokuapp.com/](https://pacific-temple-86058.herokuapp.com/). You will then have to create an account, and from there you will have access to the application search and add application sections. The website used here will be a different website with different security measure than the one given to the client.
  
 ## Contributing
 
